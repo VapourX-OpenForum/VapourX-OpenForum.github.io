@@ -30,7 +30,7 @@
 
 [[main]]
   name = "Home"
-  url = "/home/About US"
+  url = "/home/about/About US"
   weight = 5
 
 [[main]]
