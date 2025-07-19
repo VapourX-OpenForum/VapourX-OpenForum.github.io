@@ -1,7 +1,7 @@
 ---
-title: "Welcome to Doks"
+title: "VapourX-OpenForum"
 description: ""
-lead: "Congrats on setting up a new Doks project!"
+lead: "人机合一，化具象为抽象。"
 date: 2023-09-07T16:33:54+02:00
 lastmod: 2023-09-07T16:33:54+02:00
 draft: false
