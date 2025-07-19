@@ -7,7 +7,7 @@
       <div class="col-md-6 col-lg-4 mb-4">
         <div class="card h-100 shadow-sm">
           {{ with .Params.cover.image }}
-            <img src="{{ . | relURL }}" class="card-img-top" alt="{{ $.Params.cover.alt | default .Title }}">
+            <img src="{{ . | relURL }}" class="card-img-top" alt="{{ $.Params.cover.alt | default $.Title }}">
           {{ end }}
           <div class="card-body">
             <h5 class="card-title">{{ .Title }}</h5>
