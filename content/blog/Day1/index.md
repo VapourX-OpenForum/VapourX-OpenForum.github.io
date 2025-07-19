@@ -27,15 +27,17 @@ seo:
 manipulation的researcher来说，ALOHA是可以被称为Abandon级别的工作，它不仅标志了一种非常intuitive和efficient的遥操作方式，同时提出的ACT也成为了具身操作算法的classical
 baseline，并且因为其简单可用和可插拔的模型结构，应运而生大量的基于其产生的工作，或是增加了别的模态进行融合来优化策略，或是从编码器和解码器角度进行修缮得到更好的性能。
 
-<img src="./images/media/image1.png" alt="ACT flowchart" style="width: 5.75in; height: 1.5in;">
-
-ACT flowchart
+<div style="text-align: center; margin: 20px 0;">
+  <img src="./images/media/image1.png" alt="ACT flowchart" style="width: 5.75in; height: 1.5in;">
+  <p style="margin-top: 10px; font-style: italic; color: #666;">ACT流程图</p>
+</div>
 
 这其中非常核心的点就是CVAE，博主在最早期了解这篇文章时只是非常简单的略过了这个方法，但是慢慢地发现这是一个不得不仔细去了解的技术，首先其基于的VAE是变分学习在生成式模型中的典型应用，属于CV中不得不了解的baseline算法，其次它也是有条件生成的工作中非常经典的算法。
 
-<img src="./images/media/image2.png" alt="ACT Rollout" style="width: 5.75in; height: 2.5520833333333335in;">
-
-ACT Rollout
+<div style="text-align: center; margin: 20px 0;">
+  <img src="./images/media/image2.png" alt="ACT Rollout" style="width: 5.75in; height: 2.5520833333333335in;">
+  <p style="margin-top: 10px; font-style: italic; color: #666;">ACT Rollout</p>
+</div>
 
 **Know-what about CVAE**
 
@@ -46,13 +48,15 @@ ACT Rollout
 对于Basic的CVAE架构，label一般是one-hot编码，这可以参照CVAE在MNIST数据集上的基于条件生成的算法，但是对于后续越来越多的工作和越来越复杂的任务，编解码器的结构也从原先的简单的MLP和CNN变为了ResNet、Transformer以及Diffusion等模型来适配更加复杂的条件，就比如ACT采用Transformer
 Blocks作为Enc/Dec就是考虑到了时序/空间有序以及Token-based输入的问题。但从中也能看到CVAE模型的即插即用能力之强。
 
-<img src="./images/media/image3.png" alt="Vanilla VAE" style="width: 5.75in; height: 1.9583333333333333in;">
+<div style="text-align: center; margin: 20px 0;">
+  <img src="./images/media/image3.png" alt="Vanilla VAE" style="width: 5.75in; height: 1.9583333333333333in;">
+  <p style="margin-top: 10px; font-style: italic; color: #666;">标准VAE架构</p>
+</div>
 
-Vanilla VAE
-
-<img src="./images/media/image4.png" alt="Conditional VAE" style="width: 5.75in; height: 2.8125in;">
-
-Conditional VAE
+<div style="text-align: center; margin: 20px 0;">
+  <img src="./images/media/image4.png" alt="Conditional VAE" style="width: 5.75in; height: 2.8125in;">
+  <p style="margin-top: 10px; font-style: italic; color: #666;">条件VAE架构</p>
+</div>
 
 在VAE/CVAE中有很多值得去思索的技巧，比如重参数化，它让本来基于采样的不可梯度回传的部分，变成了一个参数化（也就是有一个明确的数学表达式）的过程，通过这种方式，梯度回传也就有迹可循，这也确保了Enc/Dec在训练过程当中的连续一致性。又比如损失函数的设计，从形式上拆分成了重建损失和正则化损失，但是从推导上它又很巧妙地变成了一个最大似然估计的目标函数。
 
@@ -60,9 +64,10 @@ Conditional VAE
 
 对于生成式模型，在训练时和推理时整体的模型结构会有所改变，比如GAN在训练时会有discriminator而在推理时往往不需要判别器只需要生成器，而VAE在训练时会使用encoder/decoder结构，在推理时只需要decoder。
 
-<img src="./images/media/image5.png" alt="ACT 训练 Pipeline" style="width: 5.75in; height: 4.958333333333333in;">
-
-ACT 训练 Pipeline
+<div style="text-align: center; margin: 20px 0;">
+  <img src="./images/media/image5.png" alt="ACT 训练 Pipeline" style="width: 5.75in; height: 4.958333333333333in;">
+  <p style="margin-top: 10px; font-style: italic; color: #666;">ACT训练流程</p>
+</div>
 
 在ACT的训练pipeline中，首先将encoder和decoder一起训练，在这里encoder和decoder都选择了transformer，合理性就在于输入输出都具备一定的时序性，而transformer内禀这种处理时序性问题的推理和生成能力。
 
@@ -87,7 +92,10 @@ obs输入时增加位置编码来确保空间有序性。
 
 在ICRA2024中中稿的RoboAgent，进一步基于CVAE框架，将语言指令融合到其中，提出了MT-CVAE的多任务框架，并且相比于传统的VAE的生成方法，增加了自回归的思路，让生成更加稳定，所以随着算法的发展，必然是通过不同的算法耦合其优势推出更加复杂同样性能也更好的算法体系。
 
-<img src="./images/media/image6.png" alt="RoboAgent" style="width: 5.75in; height: 1.90625in;">
+<div style="text-align: center; margin: 20px 0;">
+  <img src="./images/media/image6.png" alt="RoboAgent" style="width: 5.75in; height: 1.90625in;">
+  <p style="margin-top: 10px; font-style: italic; color: #666;">RoboAgent Framework</p>
+</div>
 
 最近博主在研究视触觉，一位偶然在其他老师的Lab认识的朋友，最近也release了FreeTacMan这种视触觉采集方式，其中也用ACT
 fusion
