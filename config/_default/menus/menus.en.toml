@@ -30,12 +30,12 @@
 
 [[main]]
   name = "Home"
-  url = "/home/About.md"
+  url = "/home/About US"
   weight = 5
 
 [[main]]
   name = "Exciting Papers"
-  url = "/docs/dexhand/Intro"
+  url = "/docs/dexhand/Introduction on Dexhand"
 # url = "/docs/1.0/prologue/introduction/"
   weight = 10
 

@@ -1,5 +1,5 @@
 ---
-title: "视触觉何以重要？"
+title: "Why do we need Visuo-tactile?"
 description: ""
 summary: ""
 date: 2023-09-07T16:04:48+02:00
