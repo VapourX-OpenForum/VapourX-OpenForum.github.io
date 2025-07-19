@@ -1,5 +1,5 @@
 ---
-title: "About US"
+title: "What is VapourX"
 description: "Description of VPX"
 summary: ""
 date: 2023-09-07T16:04:48+02:00
