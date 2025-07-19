@@ -2,8 +2,8 @@
 title: "Daily Blog Eps.1 | 从CVAE和ACT说起，重启具身中的生成式模型"
 description: "Day1"
 summary: "探讨policy如何通过CVAE的范式训练出来."
-date: 
-lastmod:
+date: 2025-07-01T10:00:00+08:00
+lastmod: 2024-07-01T10:00:00+08:00
 draft: false
 weight: 50
 categories: []
