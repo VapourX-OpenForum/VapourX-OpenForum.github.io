@@ -11,6 +11,10 @@ mainSections = ["docs", "blog"]
 
 # Doks (@thulite/doks-core)
 [doks]
+  # Logo configuration
+  logo = "vapourx-logo.png"
+  logoHeight = "32px"
+  
   # Color mode
   colorMode = "auto" # auto (default), light or dark
   colorModeToggler = true # true (default) or false (this setting is only relevant when colorMode = auto)
