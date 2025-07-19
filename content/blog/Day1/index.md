@@ -27,13 +27,13 @@ seo:
 manipulation的researcher来说，ALOHA是可以被称为Abandon级别的工作，它不仅标志了一种非常intuitive和efficient的遥操作方式，同时提出的ACT也成为了具身操作算法的classical
 baseline，并且因为其简单可用和可插拔的模型结构，应运而生大量的基于其产生的工作，或是增加了别的模态进行融合来优化策略，或是从编码器和解码器角度进行修缮得到更好的性能。
 
-![](./Day1/images/media/image1.png){width="5.75in" height="1.5in"}
+![](./images/media/image1.png){width="5.75in" height="1.5in"}
 
 ACT flowchart
 
 这其中非常核心的点就是CVAE，博主在最早期了解这篇文章时只是非常简单的略过了这个方法，但是慢慢地发现这是一个不得不仔细去了解的技术，首先其基于的VAE是变分学习在生成式模型中的典型应用，属于CV中不得不了解的baseline算法，其次它也是有条件生成的工作中非常经典的算法。
 
-![](./Day1/images/media/image2.png){width="5.75in"
+![](./images/media/image2.png){width="5.75in"
 height="2.5520833333333335in"}
 
 ACT Rollout
@@ -47,12 +47,12 @@ ACT Rollout
 对于Basic的CVAE架构，label一般是one-hot编码，这可以参照CVAE在MNIST数据集上的基于条件生成的算法，但是对于后续越来越多的工作和越来越复杂的任务，编解码器的结构也从原先的简单的MLP和CNN变为了ResNet、Transformer以及Diffusion等模型来适配更加复杂的条件，就比如ACT采用Transformer
 Blocks作为Enc/Dec就是考虑到了时序/空间有序以及Token-based输入的问题。但从中也能看到CVAE模型的即插即用能力之强。
 
-![](./Day1/images/media/image3.png){width="5.75in"
+![](./images/media/image3.png){width="5.75in"
 height="1.9583333333333333in"}
 
 Vanilla VAE
 
-![](./Day1/images/media/image4.png){width="5.75in" height="2.8125in"}
+![](./images/media/image4.png){width="5.75in" height="2.8125in"}
 
 Conditional VAE
 
@@ -62,7 +62,7 @@ Conditional VAE
 
 对于生成式模型，在训练时和推理时整体的模型结构会有所改变，比如GAN在训练时会有discriminator而在推理时往往不需要判别器只需要生成器，而VAE在训练时会使用encoder/decoder结构，在推理时只需要decoder。
 
-![](./Day1/images/media/image5.png){width="5.75in"
+![](./images/media/image5.png){width="5.75in"
 height="4.958333333333333in"}
 
 ACT 训练 Pipeline
@@ -90,7 +90,7 @@ obs输入时增加位置编码来确保空间有序性。
 
 在ICRA2024中中稿的RoboAgent，进一步基于CVAE框架，将语言指令融合到其中，提出了MT-CVAE的多任务框架，并且相比于传统的VAE的生成方法，增加了自回归的思路，让生成更加稳定，所以随着算法的发展，必然是通过不同的算法耦合其优势推出更加复杂同样性能也更好的算法体系。
 
-![](./Day1/images/media/image6.png){width="5.75in" height="1.90625in"}
+![](./images/media/image6.png){width="5.75in" height="1.90625in"}
 
 最近博主在研究视触觉，一位偶然在其他老师的Lab认识的朋友，最近也release了FreeTacMan这种视触觉采集方式，其中也用ACT
 fusion
@@ -102,7 +102,7 @@ Chunking也一定程度上缓解了推理延迟带来的问题，或许这种方
 Algorithm，但是对于我这种喜欢考古的研究者来说，我依然能够感受到这个算法为后续的发展带来的不可磨灭的影响。
 
 +:----------------------------------------------------------------:+:----------------------------------+
-| ![](./Day1/images/media/image7.png){width="1.9583333333333333in" | **"人机合一，协同进化，**         |
+| ![](./images/media/image7.png){width="1.9583333333333333in"      | **"人机合一，协同进化，**         |
 | height="2.0729166666666665in"}                                   |                                   |
 |                                                                  | **化具象为抽象，寓抽象于具象。"** |
 +------------------------------------------------------------------+-----------------------------------+
