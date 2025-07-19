@@ -35,7 +35,7 @@
 
 [[main]]
   name = "Exciting Papers"
-  url = "/docs/guides/example-guide/"
+  url = "/docs/dexhand/Intro"
 # url = "/docs/1.0/prologue/introduction/"
   weight = 10
 
